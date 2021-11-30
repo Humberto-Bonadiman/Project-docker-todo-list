@@ -1,0 +1,3 @@
+docker container pause 01container
+docker container stop 01container
+docker container rm 01container
