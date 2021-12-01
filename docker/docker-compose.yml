@@ -1,0 +1,26 @@
+version: '3'
+services:
+  todotests:
+    image: mjgargani/puppeteer:trybe1.0
+    restart: always
+    depends_on:
+      - "frontend"
+      - "backend"
+    environment:
+      - FRONT_HOST=frontend
+      - FRONT_PORT=3000
+  todofrontend:
+    image: node:14-alpine
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - "backend"
+    environment:
+      - REACT_APP_API_HOST=backend
+      - REACT_APP_API_PORT=3001
+  todobackend:
+    image: node:14-alpine
+    restart: always
+    ports:
+      - 3001:3001
