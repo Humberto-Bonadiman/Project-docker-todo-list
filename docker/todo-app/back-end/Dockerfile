@@ -1,6 +1,6 @@
 FROM node:14-alpine AS build
-WORKDIR /docker/todo-app/back-end/
+WORKDIR /
 EXPOSE 3001
-ADD ./node_modules.tar.gz .
+ADD node_modules.tar.gz ./
 COPY . .
-CMD npm start
+CMD [“npm”, “start”]
