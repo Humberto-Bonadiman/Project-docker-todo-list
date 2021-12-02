@@ -14,7 +14,6 @@ services:
       - "todoback"
     environment:
       - REACT_APP_API_HOST=todobackend
-      - REACT_APP_API_PORT=3001
   todotests:
     image: todotests
     restart: always
@@ -23,4 +22,3 @@ services:
       - "todofront"
     environment:
       - FRONT_HOST=todofront
-      - FRONT_PORT=3000
